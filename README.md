@@ -2,12 +2,12 @@
 ## Random collection of scripts
 
 ### hashcat-bench-to-csv
-Creates a CSV from hashcat benchmark output.
+Creates a CSV from hashcat benchmark output.  
 **example usage**
   1. hashcat -b > nvidia-2080ti.txt
   2. ./hashcat-bench-to-csv.sh nvidia-2080ti.txt hashcat-nvida-2080ti.csv
  
- **sample output**
+ **sample output**  
 Mode,Type,Rate
 0,"MD5",106.5 GH/s
 11,"Joomla < 2.5.18",101.5 GH/s
