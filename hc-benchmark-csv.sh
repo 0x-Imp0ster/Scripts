@@ -11,6 +11,7 @@ function usage {
 function singleCard() {
 
 	OUTFILE="single-"$OUTFILE
+	echo "Mode,Type,Hashrate" > $OUTFILE
 
 	echo -e "Single card benchmark detected"
 	echo -e "Creating CSV: '$OUTFILE'...\n"
@@ -38,6 +39,7 @@ function singleCard() {
 function multiCard() {
 
 	OUTFILE="multi-"$OUTFILE
+	echo "Mode,Type,Hashrate" > $OUTFILE
 
 	echo -e "Multi-card benchmark detected"
 	echo -e "Creating CSV: '$OUTFILE'...\n"
@@ -68,7 +70,6 @@ function multiCard() {
 INFILE="$1"
 # Output file defaults to device-name.csv
 OUTFILE=${2:-DEFAULT}
-#OUTFILE="$2"
 
 # If no output file defined, set it here
 if [ $OUTFILE == "DEFAULT" ]; then
@@ -77,10 +78,6 @@ if [ $OUTFILE == "DEFAULT" ]; then
 	OUTFILE="$OUTFILE.csv"
 	#echo -e "DEBUG:\tOutput file: $OUTFILE"
 fi
-
-# Create header row for output csv file
-echo "Mode,Type,Hashrate" > $OUTFILE
-
 
 # Check if we have a single or multi-card benchmark
 if cat $INFILE | grep -qE 'Speed.+#2';then
