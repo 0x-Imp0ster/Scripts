@@ -1,7 +1,7 @@
 # Scripts
 ## Random collection of scripts
 
-### hashcat-bench-to-csv
+### [hc-benchmark-csv](https://github.com/Imp0ster-EH/Scripts/blob/master/hc-benchmark-csv.sh)
 Creates a CSV from hashcat benchmark output.  
 **example usage**
   1. hashcat -b > nvidia-2080ti.txt
