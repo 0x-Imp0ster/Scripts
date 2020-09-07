@@ -74,7 +74,7 @@ OUTFILE=${2:-DEFAULT}
 # If no output file defined, set it here
 if [ $OUTFILE == "DEFAULT" ]; then
 	#echo -e "DEBUG:\tSetting output filename..."
-	OUTFILE=$(cat $INFILE | grep -Eo 'Device\s#1.+allocatable.+$' | awk -F "Device #1: " '{print $2}' | sed 's/[,/\*]//g' | sed 's/ /-/g')
+	OUTFILE=$(cat $INFILE | grep -v "WARNING" | grep -E 'Device\s#1' | awk -F "Device #1: " '{print $2}' | sed 's/[,/\*]//g' | sed 's/ /-/g')
 	OUTFILE="$OUTFILE.csv"
 	#echo -e "DEBUG:\tOutput file: $OUTFILE"
 fi
